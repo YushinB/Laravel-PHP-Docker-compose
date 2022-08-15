@@ -1,7 +1,9 @@
 # The target setup
-this project need alot of setup step to accomplish, that the reason this project is good example of using docker to hander complicated setup.
-The below image show the structure of our Laravel setup, it need totaly 6 containers, 3 apps container and 3 utility containers. <br>
+this project need alot of setup step to accomplish, that the reason this project is good example of using docker to hander complicated setup. The below image show the structure of our Laravel setup, it need totaly 6 containers, 3 apps container and 3 utility containers. <br>
 ![image](https://user-images.githubusercontent.com/34083808/184526111-47ab8a52-face-4057-8e15-ac8206e62dda.png)
+
+## docker compose file. 
+The setup of docker compose file is simmilar with previous section. <br>
 
 ```yaml
 version: '3.8'
@@ -51,7 +53,7 @@ services:
       - ./src:/var/www/html
 
 ```
-
+## run composer utility container to generate the source code of our application.<br>
 at first, we need to create our laravel source code by using composer utility container.
 ```
 docker-compose run --rm composer create-project --prefer-dist laravel/laravel .
